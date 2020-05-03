@@ -62,6 +62,25 @@ function morse(text) {
 
 let wordArray= [];
 let letter = "";
+let count;
+
+if (Array.isArray(text) ){
+
+    throw "Please provide a morse string";
+
+
+}
+
+
+if (text == "") {
+
+    return "";
+    
+}
+
+
+
+
 
 
 let word = text.split(" ");
@@ -76,18 +95,35 @@ let word = text.split(" ");
         
     }
 
-    // console.log(word);
-    
+
+      count = 0;
 
 
     for (let a = 0; a < wordArray.length; a++) {
 
         let  single = wordArray[a];
 
-        if (single == undefined) {
 
-            single = " "
+        if (single == undefined  && count == 0) {
+
+            count = count + 1; 
+
+          
             
+              single = " ";
+
+           
+        }
+
+        if (single == undefined && count > 0) {
+
+            single ="";
+            
+        }
+
+        if (count > 0 && wordArray[a + 1] != undefined ){
+
+            count = 0;
         }
 
         letter = letter + single;
