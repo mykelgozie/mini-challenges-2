@@ -36,10 +36,6 @@ function isolateDuplicates(text) {
                
                     for (let b = 0; b < lowerCaseSample.length; b++) {
                         
-                   
-                     
-                      
-
 
                         
                         if (stack[a] == lowerCaseSample[b]) {
@@ -63,8 +59,6 @@ function isolateDuplicates(text) {
 
                          
 
-
-                           
 
                              if ( count > 2  && (stack[a] != lowerCaseSample[b+1])  ){
 
